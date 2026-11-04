@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mural de Mensagens — dApp</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Web3.js v4 via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/web3@4.16.0/dist/web3.min.js"></script>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>🧱 Mural de Mensagens</h1>
+      <p class="sub">dApp de exemplo — Solidity + Web3.js</p>
+    </header>
+
+    <section class="card">
+      <div class="linha">
+        <button id="btnConectar">Conectar MetaMask</button>
+        <div class="info">
+          <span>Conta: <strong id="conta">—</strong></span>
+          <span>Rede: <strong id="rede">—</strong></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Mensagem atual</h2>
+      <blockquote id="mensagem">Conecte a carteira para ler o contrato.</blockquote>
+      <p class="meta">
+        Último autor: <span id="autor">—</span> ·
+        Alterações: <span id="total">—</span>
+      </p>
+      <button id="btnAtualizar" class="secundario" disabled>Recarregar</button>
+    </section>
+
+    <section class="card">
+      <h2>Escrever no mural</h2>
+      <textarea id="novaMensagem" maxlength="280" placeholder="Sua mensagem (até 280 caracteres)"></textarea>
+      <button id="btnEnviar" disabled>Enviar transação</button>
+    </section>
+
+    <section class="card">
+      <h2>Histórico (eventos)</h2>
+      <ul id="historico"><li class="vazio">Nenhum evento carregado.</li></ul>
+    </section>
+
+    <p id="status" class="status"></p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
